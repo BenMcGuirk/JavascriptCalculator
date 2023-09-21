@@ -53,25 +53,26 @@ class Calculator {
             default:
                 return; 
         }
+        this.currentOperand = computation;
     }
     
     getDisplayNumber(number) {
         const stringNumber = number.toString();
         const integerDigits = parseFloat(stringNumber.split('.')[0]);
         const decimalDigits = stringNumber.split('.')[1];
-        let intergerDisplay;
+        let integerDisplay;
         if (isNaN(integerDigits)) {
-            intergerDisplay = '';
+            integerDisplay = '';
         }
         else {
-            intergerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
+            integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
         }
         
         if (decimalDigits != null) {
-            return `${intergerDisplay}.${decimalDigits}`;
+            return `${integerDisplay}.${decimalDigits}`;
         }
         else {
-            return intergerDisplay;
+            return integerDisplay;
         }
     } 
 
