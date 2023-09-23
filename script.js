@@ -1,5 +1,3 @@
-const { c } = require("tar");
-
 class Calculator {
     constructor(previousOperandTextElement, currentOperandTextElement) {
         this.previousOperandTextElement = previousOperandTextElement
@@ -67,7 +65,6 @@ class Calculator {
         else {
             integerDisplay = integerDigits.toLocaleString('en', {maximumFractionDigits: 0});
         }
-        
         if (decimalDigits != null) {
             return `${integerDisplay}.${decimalDigits}`;
         }
@@ -98,6 +95,7 @@ const calculator = new Calculator(previousOperandTextElement, currentOperandText
 
 numberButtons.forEach(button => {
     button.addEventListener('click', () => {
+        //console.log(button.innerText);
         calculator.appendNumber(button.innerText);
         calculator.updateDisplay();
     })
